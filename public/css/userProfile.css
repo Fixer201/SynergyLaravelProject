@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;500;600;900&display=swap');
 
-:root{
+:root {
     --index: calc(1vw + 1vh);
 }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Overpass', sans-serif;
 }
-.headerText{
+
+.headerText {
     color: white;
     font-weight: 100;
     font-size: calc(var(--index) * 1);
 }
-body{
+
+body {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -25,21 +28,21 @@ body{
     -o-background-size: cover;
 }
 
-.profile-form {
+.userProfileForm {
     max-width: calc(var(--index) * 30);
     margin: 50px auto;
     padding: 40px;
     border: 3px solid #464646;
     border-radius: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
     text-align: center;
     position: relative;
 }
 
-.profile-form input[type=text], [type=date] {
+.userProfileForm input[type=text], [type=date] {
     width: calc(100% - 40px);
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 6px 0;
     display: block;
     border: 2px solid #ccc;
     border-radius: 24px;
@@ -48,11 +51,37 @@ body{
     color: white;
 }
 
+@media screen and (min-device-width: 900px) {
+    .userProfileForm {
+        font-size: calc(var(--index) * .5);
+    }
+    .userProfileForm input {
+        font-size: calc(var(--index) * .5);
+    }
+}
+
+@media screen and (max-device-width: 900px) {
+    .loginForm {
+        font-size: calc(var(--index) * .9);
+    }
+    .loginForm input {
+        font-size: calc(var(--index) * .9);
+    }
+}
+
+.userProfileForm input::placeholder {
+    color: #f3f3f3;
+}
+
+label {
+    margin-top: 6px;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-.profile-form button[type=submit] {
+.userProfileForm button[type=submit] {
     font-family: 'Overpass', sans-serif;
     font-weight: 100;
     font-size: calc(var(--index) * 1);
@@ -65,12 +94,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     width: calc(100% - 40px);
 }
-.profile-form form {
+
+.wrapper form {
     display: flex;
     flex-direction: column;
 }
 
-.profile-form label {
+.userProfileForm label {
     text-align: left;
     display: block;
     margin-bottom: 5px;

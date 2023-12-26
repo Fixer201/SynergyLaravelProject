@@ -125,19 +125,3 @@ a:hover {
     color: #ffffff;
     font-size: calc(var(--index) * 1.1);
 }
-
-/* #StartButton{
-    margin-top: calc(var(--index) * 1);
-    width: calc(var(--index) * 8);
-    color: white;
-    background-color: #5c5c5c;
-    font-size: calc(var(--index) * 0.8);
-    border: calc(var(--index) * 0.07) solid #131313;
-    border-radius: 24px;
-    padding: calc(var(--index) * 0.3);
-    font-family: 'Overpass', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    z-index: 0;
-}
-*/

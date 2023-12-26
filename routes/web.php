@@ -6,17 +6,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\MainPageController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can registration.css web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/authorization', function (){
     return view('authorization');
 });
@@ -27,9 +16,13 @@ Route::get('/registration', function (){
     return view('registration');
 });
 
+Route::get('/about', function (){
+   return view('about');
+});
+
 Route::post('/registration', [RegisterController::class, 'store']);
 
-Route::get('/', [MainPageController::class, 'index']);
+Route::get('/', [MainPageController::class, 'mainpage']);
 
 Route::get('/userprofile/{id}', [UserProfileController::class, 'show'])->name('userprofile');
 

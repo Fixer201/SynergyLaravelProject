@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <script src="https://kit.fontawesome.com/b10e1735e2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mainpage.css">
     <link rel="shortcut icon" href="../static/image/logo.png" type="image/x-icon">
     <title>Главная страница</title>
 </head>
@@ -10,10 +10,9 @@
     <div class="wrapper">
         <nav class="navbar">
             <ul>
-                <a href="#">О нас</a>
+                <a href="/about">О нас</a>
                 <a href="/authorization" id="loginButton">Войти</a>
             </ul>
-            {{--<input type="text" id="searchInput" value=""> --}}
         </nav>
 
         <div class="userProfile-icon">
@@ -25,7 +24,6 @@
             @endif
 
         </div>
-
 
         <div class="content">
             <div class="title">

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("organisation_name");
             $table->char('code', 60);
             $table->string('password', 255);
+            $table->string('decPassword', 255);
             $table->timestamps();
         });
     }

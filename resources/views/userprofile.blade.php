@@ -11,11 +11,11 @@
     <title>User Profile</title>
 </head>
 <body>
-    <div class="profile-form">
-        <form method="post" action="/userprofile/{{$user->id ?? ''}}">
+    <div class="wrapper">
+        <form class="userProfileForm" method="post" action="/userprofile/{{$user->id ?? ''}}">
             @csrf
             <a href="/"><i class="fa-solid fa-xmark"></i></a>
-            <h1 class="headerText">Если вы желаете изменить значения введите новые ниже и нажмите кнопку сохранить</h1>
+            <h1 class="headerText">Если вы желаете изменить данные, введите новые ниже и нажмите кнопку сохранить</h1>
             <label for="email">Email</label>
             <input type="text" id="email" name="email" placeholder="Ваш Email" value="{{ $user->email ?? '' }}" required>
 

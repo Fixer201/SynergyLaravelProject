@@ -6,13 +6,13 @@ use Illuminate\Support\Facades\Auth;
 
 class MainPageController extends Controller
 {
-    public function index()
+    public function mainpage()
     {
         if (Auth::check()) {
             $user = Auth::user();
-            return view('index', ['user' => $user]);
+            return view('mainpage', ['user' => $user]);
         } else {
-            return view('index')->with('message', 'Для входа в ваш профиль пожалуйста, авторизуйтесь');
+            return view('mainpage')->with('message', 'Для входа в ваш профиль пожалуйста, авторизуйтесь');
         }
     }
 }

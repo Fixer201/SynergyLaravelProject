@@ -22,7 +22,20 @@ class RegisterController extends Controller
             'code' => 'required|max:60',
         ]);
 
+        // Проверяем, существует ли пользователь с таким email
+        $existingUser = User::where('email', $validatedData['email'])->exists();
+
+        if ($existingUser) {
+            // Если пользователь существует, возвращаем ошибку
+            return back()->withErrors([
+                'message' => 'Пользователь с таким email уже существует',
+            ]);
+        }
+
+        // генерируем случайный пароль
         $password = Str::random(8);
+
+        // создаём пользователя
 
         $user = User::create([
             'email' => $validatedData['email'],
@@ -32,11 +45,13 @@ class RegisterController extends Controller
             'give_passport_date' => $validatedData['give_passport_date'],
             'organisation_name' => $validatedData['organisation_name'],
             'code' => $validatedData['code'],
-            'password' => bcrypt($password) // bcrypt
+            'password' => bcrypt($password), // bcrypt шифруем пароль
+            'decPassword' => $password, // хранение незашифрованного пароля для удобства разработки
         ]);
 
+        // отправляем пароль на почту пользователя
         Mail::raw("Ваш сгенерированный пароль: " . $password, function ($message) use ($user) {
-            $message->to($user->email)->subject('Ваш сгенерированный пароль');
+            $message->to($user->email)->subject('Ваш сгенерированный пароль: ');
         });
 
         Auth::login($user);

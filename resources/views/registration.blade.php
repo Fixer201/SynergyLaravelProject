@@ -12,33 +12,44 @@
     <title>Register</title>
 </head>
 <body>
-    <form class="loginForm" id="loginForm" method="POST">
-        @csrf
-        <div class="loginForm-container">
-            <a href="/"><i class="fa-solid fa-xmark"></i></a>
-            <label for="email">email</label>
-            <input id="email" type='email' placeholder="Введите ваш email" name="email" required>
+    <div class="wrapper">
+        <form class="registrationForm" id="loginForm" method="POST">
+            @csrf
+            <div class="registrationForm-container">
+                <a href="/"><i class="fa-solid fa-xmark"></i></a>
+                <label for="email">email</label>
+                <input id="email" type='email' placeholder="Введите ваш email" name="email" required>
 
-            <label for="uname"><b>ФИО</b></label>
-            <input id="uname" type="text" placeholder="Введите ваше ФИО (макс 100 символов)" maxlength="100" name="name" required>
+                <label for="uname"><b>ФИО</b></label>
+                <input id="uname" type="text" placeholder="Введите ваше ФИО (макс 100 символов)" maxlength="100" name="name" required>
 
-            <label for="passport"><b>Серия и номер паспорта</b></label>
-            <input id="passport-series" type="text" placeholder="Введите серию паспорта" maxlength="4" name="passport_series" required>
-            <input id="passport-number" type="text" placeholder="Введите номер паспорта" maxlength="6" name="passport_number" required>
+                <label for="passport"><b>Серия и номер паспорта</b></label>
+                <input id="passport-series" type="text" placeholder="Введите серию паспорта" maxlength="4" name="passport_series" required>
+                <input id="passport-number" type="text" placeholder="Введите номер паспорта" maxlength="6" name="passport_number" required>
 
-            <label for="passport-giveDate">Дата выдачи паспорта</label>
-            <input id="passport-giveDate" type="date" name="give_passport_date" required>
+                <label for="passport-giveDate">Дата выдачи паспорта</label>
+                <input id="passport-giveDate" type="date" name="give_passport_date" required>
 
-            <label for="passportIssuingOrg">Данные организации, выдавшей паспорт</label>
-            <input id="passport-issuingAuthority" type="text" name="organisation_name" placeholder="Введите название организации, выдавшей паспорт" required>
-            <input id="passport-code" type="text" name="code" maxlength="7" placeholder="Введите код подразделения ***-***" required>
+                <label for="passportIssuingOrg">Данные организации, выдавшей паспорт</label>
+                <input id="passport-issuingAuthority" type="text" name="organisation_name" placeholder="Введите название организации, выдавшей паспорт" required>
+                <input id="passport-code" type="text" name="code" maxlength="7" placeholder="Введите код подразделения ***-***" required>
 
-            <button id="submit" type="submit">Зарегистрироваться</button>
+                <button id="submit" type="submit">Зарегистрироваться</button>
 
-            <div id="authorization-wrapper">
-                <a id="authorization" href="/authorization">Авторизация</a>
+                <div id="authorization-wrapper">
+                    <a id="authorization" href="/authorization">Авторизация</a>
+                </div>
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>

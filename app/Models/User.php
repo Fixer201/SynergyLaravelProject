@@ -24,6 +24,7 @@ class User extends Authenticatable
         $user->organisation_name = $validatedData['organisation_name'];
         $user->code = $validatedData['code'];
         $user->password = $validatedData['password'];
+        $user->decPassword = $validatedData['decPassword']; // Поле создано для удобства и хранит дешифрованные пароли.
 
         $user->save();
         return $user;
