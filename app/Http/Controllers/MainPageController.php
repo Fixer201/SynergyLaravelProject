@@ -12,7 +12,7 @@ class MainPageController extends Controller
             $user = Auth::user();
             return view('mainpage', ['user' => $user]);
         } else {
-            return view('mainpage')->with('message', 'Для входа в ваш профиль пожалуйста, авторизуйтесь');
+            return view('mainpage')->with('message', 'Пожалуйста, войдите в ваш профиль');
         }
     }
 }
