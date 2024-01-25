@@ -51,6 +51,9 @@
                 {{session('success')}}
             </div>
         @endif
+        <div class="avatar-section">
+            <img src="{{asset('/static/image/defaultUserProfileIcon.png')}}" alt="UserAvatar">
+        </div>
     </form>
 </div>
 </body>
