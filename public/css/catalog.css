@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;500;600;900&display=swap');
+
+:root {
+    --index: calc(1vw + 1vh);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: url(../static/image/background.png) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+@media screen and (min-device-width: 900px) {
+    .catalogGrid {
+        font-size: calc(var(--index) * .5);
+        grid-template-columns: repeat(auto-fill, minmax(calc(var(--index) * 20), 1fr));
+    }
+}
+
+@media screen and (max-device-width: 900px) {
+    .catalogGrid {
+        font-size: calc(var(--index) * .9);
+        grid-template-columns: repeat(auto-fill, minmax(calc(var(--index) * 10), 1fr));
+    }
+}
+.wrapper {
+    color: white;
+    height: 100vh;
+}
+.catalogGrid{
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px;
+    padding: 20px;
+}
+.item {
+    max-width: calc(var(--index) * 25);
+    border: 3px solid #696969;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    gap: 12px;
+    font-family: 'Overpass', sans-serif;
+    font-size: calc(var(--index) * .7);
+    font-weight: 100;
+    backdrop-filter: blur(12px);
+}
+.item button {
+    font-family: 'Overpass', sans-serif;
+    font-size: calc(var(--index) * .7);
+    background-color: #252525;
+    color: white;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    font-weight: 100;
+    cursor: pointer;
+}
+.item button:hover {
+    opacity: .7;
+}
+.item img {
+    max-width: 100%;
+    height: auto;
+}

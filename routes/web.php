@@ -31,6 +31,9 @@ Route::get('/userprofile', [UserProfileController::class, 'showNew'])->name('use
 Route::post('/userprofile/{id}', [UserProfileController::class, 'update']);
 
 // Блок каталога
+Route::get('/catalog', function (){
+    return view('catalog');
+})->name('catalog');
 
 // Блок страницы 'О нас'
 Route::get('/about', function (){

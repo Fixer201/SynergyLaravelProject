@@ -102,7 +102,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     display: inline;
     cursor: pointer;
-    position: relative; /* добавьте позиционирование для псевдоэлемента */
+    position: relative;
 }
 
 #authorization::before {

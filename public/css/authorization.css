@@ -95,7 +95,7 @@ body {
     color: white;
     display: inline;
     cursor: pointer;
-    position: relative; /* добавьте позиционирование для псевдоэлемента */
+    position: relative;
 }
 
 #registration::before {

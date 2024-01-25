@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Авторизация</title>
-
-    <link rel="stylesheet" href="{{ asset('css/authorization.css')}}">
-    <link rel="shortcut icon" href="{{asset('static/image/logo.png')}}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/b10e1735e2.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{asset('css/authorization.css')}}">
+    <link rel="shortcut icon" href="{{asset('static/image/logo.png')}}" type="image/x-icon">
+
+    <title>Авторизация</title>
 </head>
 <body>
 <form class="loginForm" id="loginForm" method="post" action="{{ route('login') }}">

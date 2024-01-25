@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <script src="https://kit.fontawesome.com/b10e1735e2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/mainpage.css">
-    <link rel="shortcut icon" href="../static/image/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('/css/mainpage.css')}}">
+    <link rel="shortcut icon" href="{{asset('/static/image/logo.png')}}" type="image/x-icon">
     <title>Главная страница</title>
 </head>
 <body>
@@ -12,6 +12,7 @@
         <ul>
             <a href="{{route('about')}}">О нас</a>
             <a href="{{route('authorization')}}" id="loginButton">Войти</a>
+            <a href="{{route('catalog')}}">Каталог</a>
         </ul>
         @if(isset($message))
             <p id="AuthMessage" style="

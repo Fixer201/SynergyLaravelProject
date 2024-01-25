@@ -39,7 +39,7 @@ body {
     position: relative;
 }
 
-.userProfileForm input[type=text], [type=date] {
+.userProfileForm input[type=text], [type=date], [type=email] {
     width: calc(100% - 40px);
     padding: 12px 20px;
     margin: 6px 0;
