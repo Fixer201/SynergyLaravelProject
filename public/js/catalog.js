@@ -1,23 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const detailLinks = document.querySelectorAll('.item a');
+    const buttons = document.querySelectorAll('.item button[data-target]');
+    const closeButtons = document.querySelectorAll('.details button[data-target]');
 
-    detailLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
             event.preventDefault();
-            const targetId = link.getAttribute('href').substr(1); // Получаем id из href, убирая #
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement.style.display === 'block') {
-                targetElement.style.display = 'none';
-            } else {
-                document.querySelectorAll('.details').forEach(detail => {
-                    if (detail.id !== targetId) {
-                        detail.style.display = 'none';
-                    }
-                });
-                targetElement.style.display = 'block';
-            }
+            closeAllDetails();
+            const targetId = button.getAttribute('data-target');
+            const targetDetail = document.querySelector('#' + targetId); // Исправлено здесь
+            toggleDetails(targetDetail);
         });
     });
-});
 
+    closeButtons.forEach(function(closeButton) {
+        closeButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = closeButton.getAttribute('data-target');
+            const targetDetail = document.querySelector('#' + targetId); // Исправлено здесь
+            toggleDetails(targetDetail);
+        });
+    });
+
+    function toggleDetails(detail) {
+        if (detail.style.display === 'none') {
+            detail.style.display = 'block';
+        } else {
+            detail.style.display = 'none';
+        }
+    }
+
+    function closeAllDetails() {
+        const allDetails = document.querySelectorAll('.details')
+        allDetails.forEach(function (detail){
+            detail.style.display = 'none';
+        });
+    }
+});

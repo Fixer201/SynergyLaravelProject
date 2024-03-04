@@ -26,7 +26,7 @@
         <label for="passport_series">Серия и номер паспорта</label>
         <!-- Добавлен атрибут pattern для проверки ввода -->
         <input type="text" id="passport_series" pattern="[0-9]{4}" name="passport_series" placeholder="Серия вашего паспорта (4 цифры)" required>
-        <input type="text" id="passport_number" maxlength="6" name="passport_number" placeholder="Номер вашего паспорта (6 цифр)">
+        <input type="text" id="passport_number" pattern="[0-9]{6}" maxlength="6" name="passport_number" placeholder="Номер вашего паспорта (6 цифр)" style="margin-top: 5px">
 
         <label for="give_passport_date">Дата выдачи паспорта</label>
         <input type="date" id="give_passport_date" name="give_passport_date" placeholder="Дата выдачи паспорта">

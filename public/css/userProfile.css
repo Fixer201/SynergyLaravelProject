@@ -25,17 +25,17 @@ body {
 .headerText {
     color: white;
     font-weight: 100;
-    font-size: calc(var(--index) * 1);
+    font-size: calc(var(--index) * 1.3);
     text-align: center;
 }
 
 .avatar-section img {
-    width: 27%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: calc(var(--index) * 3);
+    top: calc(var(--index) * 5);
     right: calc(var(--index) * 1);
 }
 
@@ -64,18 +64,25 @@ body {
     .userProfileForm {
         font-size: calc(var(--index) * .5);
     }
+
     .userProfileForm input {
-        font-size: calc(var(--index) * .5);
+        font-size: calc(var(--index) * .4);
     }
 }
 
 @media screen and (max-device-width: 900px) {
-    .loginForm {
+    .userProfileForm {
         font-size: calc(var(--index) * .9);
     }
-    .loginForm input {
+
+    .userProfileForm input {
         font-size: calc(var(--index) * .9);
     }
+
+    .userProfileForm input::placeholder {
+        font-size: calc(var(--index) * .85);
+    }
+
     .avatar-section img {
         top: calc(var(--index) * 10);
         right: calc(var(--index) * 1);
