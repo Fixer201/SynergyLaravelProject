@@ -18,10 +18,10 @@
         <a href="/"><i class="fa-solid fa-xmark"></i></a>
         <h1 class="headerText">Если вы желаете изменить данные, введите новые ниже и нажмите кнопку сохранить</h1>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Ваш Email" value="{{ $user->email ?? '' }}" required>
+        <input type="email" id="email" name="email" placeholder="Новый Email" value="{{ $user->email ?? '' }}" required>
 
         <label for="name">ФИО</label>
-        <input type="text" id="name" name="name" maxlength="100" placeholder="Ваше ФИО (макс 100 символов)" required>
+        <input type="text" id="name" name="name" maxlength="100" placeholder="Новое ФИО (макс 100 символов)" required>
 
         <label for="passport_series">Серия и номер паспорта</label>
         <!-- Добавлен атрибут pattern для проверки ввода -->

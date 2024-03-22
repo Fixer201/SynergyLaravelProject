@@ -3,13 +3,16 @@
 :root {
     --index: calc(1vw + 1vh);
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    position: fixed;
+    position: absolute;
+    display: flex;
     height: 100%;
     width: 100%;
     background: url(../static/image/background.png) no-repeat center center fixed;
@@ -18,34 +21,51 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+
 .wrapper {
     color: white;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
 .box {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 3px solid #696969; /* default #464646 */
     border-radius: 14px;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(24px);
     padding: 20px;
+    width: 60%;
 }
 
 .header-text {
     font-family: 'Overpass', sans-serif;
-    font-weight: 100;
+    font-weight: 200;
     font-size: calc(var(--index) * 1);
     margin: calc(var(--index) * 1);
+    text-align: center;
 }
-.cat-gif {
-    width: calc(var(--index) * 10);
-    height: calc(var(--index) * 10);
-    object-fit: contain;
+
+.main-text {
+    display: flex;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 200;
+    font-size: calc(var(--index) * 1);
+    margin: calc(var(--index) * 1);
+    align-items: center;
+    text-align: center;
 }
+
+h3 {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600;
+    font-size: calc(var(--index) * 1);
+}
+
 .fa-xmark {
     transform: scale(150%);
     position: absolute;
@@ -54,6 +74,7 @@ body {
     color: #fff;
     z-index: 2;
 }
+
 .fa-xmark:hover {
     opacity: 0.6;
 }
